@@ -1,0 +1,41 @@
+from tkinter import *
+
+#funções
+janela = Tk()
+lista1 = []
+def bt_click():
+    lista1.append(ed1.get())
+def bt_click1():
+    lista1.remove(ed2.get())
+def bt_click2():
+    #print(lista1)
+    lb["text"] = lista1
+
+#Variaveis
+fn = Label(janela, text="Adicionar na lista")
+btfn = Button(janela, text="Ok", bg="red", command=bt_click)
+un = Label(janela, text="Remover da lista")
+btun = Button(janela, text="Ok", bg="red", command=bt_click1)
+btmr = Button(janela, text="Mostrar Lista", bg="red", command=bt_click2)
+
+#Recebimento de dados
+ed1 = Entry(janela)
+ed2 = Entry(janela)
+
+lb = Label(janela, text="|LISTA|", bg="green")
+
+
+#Posições
+fn.grid(row=0, column=0)
+un.grid(row=1, column=0)
+ed1.grid(row=0, column=1)
+ed2.grid(row=1, column=1)
+btfn.grid(row=0, column=2)
+btun.grid(row=1, column=2)
+btmr.grid(row=2, column=1)
+lb.grid(row=3, column=1)
+
+#fim programa
+janela.title("GUI Desafio lista")
+janela.geometry("350x150+300+100")
+janela.mainloop()
